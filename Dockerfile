@@ -9,7 +9,3 @@ RUN usermod -aG sudo admin
 USER admin
 WORKDIR /home/admin
 CMD ["bash"]
-
-# docker build -t codeeer/env-lean-openwrt .
-# docker push codeeer/env-lean-openwrt
-# sudo docker cp <dockerid>:/home/admin/lede/bin/targets/ /Users/oreo/Project/LeanOpenWrt/
