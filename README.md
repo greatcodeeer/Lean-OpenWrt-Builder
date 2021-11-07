@@ -48,5 +48,6 @@ d. 再次编译（用于更新源）
 $ git pull // 更新feeds
 $ ./scripts/feeds update -a && ./scripts/feeds install -a // 更新feeds
 $ rm -rf ./tmp && rm -rf .config // 清除编译配置和缓存
+$ make menuconfig // 配置菜单
 $ make -j<N> V=s // 多线程编译（N=线程数+1，例如4线程的i5填-j5）
 ```
