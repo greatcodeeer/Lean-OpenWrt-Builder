@@ -25,8 +25,7 @@ src-git lienol https://github.com/fw876/helloworld
 ```
 4. 安装/更新源，并进入菜单
 ```
-$ ./scripts/feeds update -a
-$ ./scripts/feeds install -a
+$ ./scripts/feeds update -a && ./scripts/feeds install -a
 $ make menuconfig
 ```
 5. 在【LuCI -> Application】中添加/删除插件（按Y勾选，N取消勾选）
@@ -40,7 +39,7 @@ c. 从容器复制编译好的固件
 // 找到运行此实例的CONTAINER ID
 $ docker ps
 // 从容器中复制固件到本地
-$ sudo docker cp <CONTAINER ID>:/home/admin/lede/bin/targets/ .
+$ sudo docker cp <CONTAINER ID>:/home/admin/lede/bin/targets/ ~/Downloads/
 ```
 d. 再次编译（用于更新源）
 ```
@@ -49,5 +48,5 @@ $ git pull // 更新feeds
 $ ./scripts/feeds update -a && ./scripts/feeds install -a // 更新feeds
 $ rm -rf ./tmp && rm -rf .config // 清除编译配置和缓存
 $ make menuconfig // 配置菜单
-$ make -j<N> V=s // 多线程编译（N=线程数+1，例如4线程的i5填-j5）
+$ make -j8 V=s // 多线程编译
 ```
